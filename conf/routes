@@ -11,5 +11,9 @@ GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
+# Hello end-point
+GET     /hello                                  Application.sayHello
+
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
+
