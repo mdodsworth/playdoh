@@ -3,29 +3,6 @@
 #{selenium}
     // Open the home page, and check that no error occured
     open('/')
-    assertNotTitle('Application error')
-
-    // check that the header is present
-    assertTextPresent('This is a test')
-
-    // Submit the form
-    clickAndWait('css=input[type=submit]')
-
-    // Check the error
-    assertTextPresent('Oops, please enter your name!')
-
-    // Type the name and submit
-    type('css=input[type=text]', 'bob')
-    clickAndWait('css=input[type=submit]')
-
-    // Check the result
-    assertTextPresent('Hello bob!')
-    assertTextPresent('This is a test')
-
-    // Check the back link
-    clickAndWait('link=Back to form')
-
-    // Home page?
-    assertTextNotPresent('Hello bob!')
+    assertNotTitles('Application error')
 
 #{/selenium}
