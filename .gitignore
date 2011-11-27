@@ -1,4 +1,6 @@
 tmp/
 test-result/
 *.iml
+*.ipr
+*.iws
 .*.un~

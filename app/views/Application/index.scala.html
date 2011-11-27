@@ -1,5 +1,12 @@
-@(user:Option[models.User])
+@(friends:Option[com.google.gson.JsonObject])
+@import scala.collection.JavaConversions._
 
 @main() {
-    <p>@user.get.name</p>
+    @friends.map { friends =>
+        @for(friend <- friends.getAsJsonArray("data")) {
+            <li>@friend.getAsJsonObject.get("name").getAsString</li>
+        }
+    }.getOrElse {
+        <a href="@action(controllers.Application.auth)">login</a>
+    }
 }
